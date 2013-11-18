@@ -1,0 +1,24 @@
+@import "controls.less";
+@import "clock.less";
+@import "laps.less";
+
+body{
+		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+}
+
+.info-block{
+	display: inline-block;
+	left: 50%;
+	position: relative;
+	margin-left: -296px;
+
+	padding: 8px;
+}
+@media(max-width: 1000px){
+	.info-block{
+		display: inherit;
+		left: auto;
+		position: inherit;
+		margin-left: 0;
+	}
+}

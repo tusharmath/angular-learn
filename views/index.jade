@@ -2,40 +2,49 @@ doctype 5
 html(lang="en", ng-app="myAppModule")
 	head
 		title Playing around with Angular JS
+		link(rel="stylesheet", type="text/css", href="styles/css/bootstrap.buttons.css")
+		link(rel="stylesheet", type="text/css", href="styles/less/style.css")
 	body
-		h1 Hello, World!
-		div
-			div(ng-controller="StopWatchController as x")
-				div
-					span {{x.hours}}
-					span :
-					span {{x.minutes}}
-					span :
-					span {{x.seconds}}
-					span :
-					span {{x.milliseconds}}
 
-				div
-					button(type='button', ng-click="x.start()") Start
-					button(type='button', ng-click="x.lap()") Lap
-					button(type='button', ng-click="x.stop()") Stop
-					button(type='button', ng-click="x.reset()") Reset
-				div
-					ol
-						li(ng-repeat='lap in x.laps')
-							{{lap.hours}}
-							span :
-							{{lap.minutes}}
-							span :
-							{{lap.seconds}}
-							span :
-							{{lap.milliseconds}}
+		.container
+
+			.content(ng-controller="StopWatchController as x")
+				div.clock
+					span.digit {{x.minutes | ClockDigitFilter}}
+					span :
+					span.digit {{x.seconds | ClockDigitFilter}}
+					span :
+					span.digit {{x.milliseconds | ClockDigitFilter}}
+
+				.info-block
+					div.controls
+						button.control.btn.btn-primary(type='button', ng-click="x.start()") Start
+						button.control.btn.btn-success(type='button', ng-click="x.lap()") Lap
+						button.control.btn.btn-warning(type='button', ng-click="x.stop()") Pause
+						button.control.btn.btn-danger(type='button', ng-click="x.reset()") Reset
+					div.laps
+
+						div.lap(ng-repeat='lap in x.laps')
+							span.count
+								span Lap
+								span {{$index + 1}}
+							span.time
+								span= " "
+								span {{lap.minutes | ClockDigitFilter}}
+								span :
+								span {{lap.seconds | ClockDigitFilter}}
+								span :
+								span {{lap.milliseconds | ClockDigitFilter}}
 
 		if debug
 			script(src='http://localhost:35729/livereload.js')
 			script(src='library/angular.js')
+			script(src='library/lodash.js')
 
 			script(src='app.js')
+
+			//Filters
+			script(src="filters/ClockDigitFilter.js")
 
 			//Services
 			script(src="services/StopWatchService.js")

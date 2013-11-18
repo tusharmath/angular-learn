@@ -19,10 +19,7 @@
 			self = @
 			callback = (data)->
 
-				self.hours = data.hours
-				self.minutes = data.minutes
-				self.seconds = data.seconds
-				self.milliseconds = data.milliseconds
+				_.assign self, _.pick data, 'milliseconds', 'hours', 'minutes', 'seconds'
 
 
 			@stopWatch.start callback
@@ -35,11 +32,8 @@
 		stop: ->
 			@stopWatch.pause()
 
-
 		lap: ->
-
-			{hours, seconds, minutes, milliseconds} = @stopWatch
-			@laps.push {hours, seconds, minutes, milliseconds}
+			@laps.push _.pick @stopWatch, 'hours', 'seconds', 'minutes', 'milliseconds'
 
 
 	_StopWatchController.$inject = ['$scope','StopWatchService']

@@ -1,6 +1,7 @@
 express = require 'express'
 coffeeScript = require 'connect-coffee-script'
 liveload = require 'liveload'
+lessMiddleware = require 'less-middleware'
 app = express();
 
 app.configure ->
@@ -12,8 +13,11 @@ app.configure ->
 	app.use app.router
 	app.use liveload
 		root:process.cwd()
-		files:/.(css|jade|js|less)$/
+		files:/.(css|jade|js|less|coffee)$/
 		excludes:/^node_modules$/
+
+	app.use lessMiddleware
+		src : __dirname + '/app'
 
 	app.use coffeeScript
 		src: __dirname + '/app'
