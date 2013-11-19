@@ -1,1 +1,1 @@
-window.myApp = window.myApp || angular.module 'myAppModule', []
+angular.module 'myAppModule', []

@@ -1,6 +1,6 @@
 #Clock Digit Filter
-((myApp) ->
-	myApp.filter 'ClockDigitFilter', ->
+(->
+	angular.module('myAppModule').filter 'ClockDigitFilter', ->
 		(input, type) ->
 
             if type is 'milliseconds'
@@ -11,5 +11,5 @@
                 else input
             else
                 if input < 10 then  "0#{input}" else input
-)(myApp)
+)()
 

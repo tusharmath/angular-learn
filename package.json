@@ -1,10 +1,13 @@
 {
-	"name": "SimpleApplication",
-	"dependencies": {
-		"express": "*",
-		"jade": "*",
-		"liveload": "*",
-		"less-middleware":"*"
-	}
-
+    "name": "SimpleApplication",
+    "dependencies": {
+        "express": "*",
+        "jade": "*",
+        "liveload": "*",
+        "less-middleware": "*",
+        "karma": "*",
+        "karma-coffee-preprocessor": "*",
+        "karma-mocha": "*",
+        "karma-chai": "*"
+    }
 }

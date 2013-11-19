@@ -17,9 +17,8 @@ html(lang="en", ng-app="myAppModule")
 
 				.info-block
 					div.controls
-						button.control.btn.btn-primary(type='button', ng-click="x.start()") Start
+						button.control.btn(type='button', ng-click="x.start()", ng-class="x.toggleButton_class") {{x.toggleButton}}
 						button.control.btn.btn-success(type='button', ng-click="x.lap()") Lap
-						button.control.btn.btn-warning(type='button', ng-click="x.stop()") Pause
 						button.control.btn.btn-danger(type='button', ng-click="x.reset()") Reset
 					div.laps
 
@@ -46,6 +45,7 @@ html(lang="en", ng-app="myAppModule")
 
 			//Services
 			script(src="services/StopWatchService.js")
+			script(src="services/TimeVarianceService.js")
 
 
 			//Controllers

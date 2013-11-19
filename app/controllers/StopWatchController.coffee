@@ -1,5 +1,5 @@
 #SimpleController File
-((myApp) ->
+(->
 	###
 		Should contain only View Logic
 		One controller for one view
@@ -23,6 +23,8 @@
 			if @started is false
 				self = @
 				callback = (data)->
+
+
 					_.assign self, _.pick data, 'milliseconds', 'hours', 'minutes', 'seconds'
 
 				@stopWatch.start callback
@@ -46,10 +48,10 @@
 			@stopWatch.pause()
 
 		lap: ->
-			@laps.push _.pick @stopWatch, 'hours', 'seconds', 'minutes', 'milliseconds'
+			@laps.push _.pick @stopWatch.getVariance(), 'hours', 'seconds', 'minutes', 'milliseconds'
 
 
 	_StopWatchController.$inject = ['$scope','StopWatchService']
 
-	myApp.controller 'StopWatchController', _StopWatchController
-)(myApp)
+	angular.module('myAppModule').controller 'StopWatchController', _StopWatchController
+)()
