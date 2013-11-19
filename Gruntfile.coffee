@@ -8,7 +8,7 @@
 			pkg: grunt.file.readJSON 'package.json'
 			release: 
 				options: npm: false
-				
+
 			'gh-pages':
 				release:
 					options: base: "<%= opt.output%>"
@@ -49,3 +49,4 @@
 						"<%= opt.output%>/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
 				
 		grunt.initConfig grunt_config
+		grunt.registerTask 'publish', ['release', 'jade', 'less', 'coffee', 'uglify', 'gh-pages']
