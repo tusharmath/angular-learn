@@ -2,6 +2,8 @@ describe 'StopWatchServiceTest', ->
 
 	beforeEach ->
 		module 'myAppModule'
+
+		#Mocking
 		FakeTimeVarianceService = {
 			reset: ->
 			getVariance: ->

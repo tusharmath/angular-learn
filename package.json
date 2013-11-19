@@ -1,5 +1,6 @@
 {
     "name": "SimpleApplication",
+    "version": "0.0.1",
     "dependencies": {
         "express": "*",
         "jade": "*",
@@ -8,6 +9,14 @@
         "karma": "*",
         "karma-coffee-preprocessor": "*",
         "karma-mocha": "*",
-        "karma-chai": "*"
+        "karma-chai": "*",
+        "matchdep": "*",
+        "grunt-gh-pages": "*",
+        "grunt-contrib-jade": "*",
+        "grunt-contrib-less": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-coffee": "*",
+        "grunt-release": "*"
+
     }
 }
