@@ -12,17 +12,30 @@
 				@seconds = 0
 				@milliseconds = 0
 
+				@toggleButton = 'Start'
+				@toggleButton_class = 'btn-primary'
+				@started = false;
+
 				@laps = []
 
 		start : ->
 
-			self = @
-			callback = (data)->
+			if @started is false
+				self = @
+				callback = (data)->
+					_.assign self, _.pick data, 'milliseconds', 'hours', 'minutes', 'seconds'
 
-				_.assign self, _.pick data, 'milliseconds', 'hours', 'minutes', 'seconds'
+				@stopWatch.start callback
+				@toggleButton = 'Pause'
+				@toggleButton_class = 'btn-warning'
 
+			else
+				@toggleButton = 'Start'
+				@toggleButton_class = 'btn-primary'
+				@stopWatch.pause()
 
-			@stopWatch.start callback
+			@started = not @started
+
 
 		reset : ->
 			@stopWatch.reset()

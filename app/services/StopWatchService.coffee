@@ -1,8 +1,13 @@
 ((myApp)->
 	class _StopWatchService
+		WatchStates:
+			STOPPED :1
+			PAUSED : 2
+			RUNNING : 3
+
 		constructor: (@timeout) ->
 			@init()
-			@hasStarted = false
+			@state = @WatchStates.STOPPED
 
 		#Resets counters
 		init: ->
@@ -14,7 +19,7 @@
 
 		increment:() ->
 
-			@timeout (-> self.increment()), 1 if @hasStarted is true
+			@timeout (-> self.increment()), 1 if @state is @WatchStates.RUNNING
 			dateDiff = new Date new Date - @startDate
 
 
@@ -39,17 +44,21 @@
 
 
 		pause: ->
-			@hasStarted = false
+			@state = @WatchStates.PAUSED
 
 		start: (@callback) ->
-			if @hasStarted is false
-				@startDate = new Date
-				@hasStarted = true
+
+
+			if @state isnt @WatchStates.RUNNING
+				@startDate = new Date if @state isnt @WatchStates.PAUSED
+				@state = @WatchStates.RUNNING
 				@increment()
 
 		reset: ->
 			@init()
 			@callback {@milliseconds, @seconds, @minutes, @hours}
+			@startDate = new Date
+
 
 	_StopWatchService.$inject = ['$timeout']
 
