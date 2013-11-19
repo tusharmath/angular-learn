@@ -1,22 +1,22 @@
 {
-    "name": "SimpleApplication",
-    "version": "0.0.3",
-    "dependencies": {
-        "express": "*",
-        "jade": "*",
-        "liveload": "*",
-        "less-middleware": "*",
-        "karma": "*",
-        "karma-coffee-preprocessor": "*",
-        "karma-mocha": "*",
-        "karma-chai": "*",
-        "matchdep": "*",
-        "grunt-gh-pages": "*",
-        "grunt-contrib-jade": "*",
-        "grunt-contrib-less": "*",
-        "grunt-contrib-uglify": "*",
-        "grunt-contrib-coffee": "*",
-        "grunt-release": "*",
-        "grunt-contrib-clean": "*"
-    }
+  "name": "SimpleApplication",
+  "version": "0.0.4",
+  "dependencies": {
+    "express": "*",
+    "jade": "*",
+    "liveload": "*",
+    "less-middleware": "*",
+    "karma": "*",
+    "karma-coffee-preprocessor": "*",
+    "karma-mocha": "*",
+    "karma-chai": "*",
+    "matchdep": "*",
+    "grunt-gh-pages": "*",
+    "grunt-contrib-jade": "*",
+    "grunt-contrib-less": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-coffee": "*",
+    "grunt-release": "*",
+    "grunt-contrib-clean": "*"
+  }
 }
