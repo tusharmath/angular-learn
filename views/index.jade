@@ -11,10 +11,9 @@ html(lang="en", ng-app="myAppModule")
 			.content(ng-controller="StopWatchController as x")
 				div.clock
 					span.digit {{x.minutes | ClockDigitFilter}}
-					span :
+					span.digit :
 					span.digit {{x.seconds | ClockDigitFilter}}
-					span :
-					span.digit {{x.milliseconds | ClockDigitFilter}}
+					span.digit.milliseconds {{x.milliseconds | ClockDigitFilter: 'milliseconds'}}
 
 				.info-block
 					div.controls
@@ -33,8 +32,7 @@ html(lang="en", ng-app="myAppModule")
 								span {{lap.minutes | ClockDigitFilter}}
 								span :
 								span {{lap.seconds | ClockDigitFilter}}
-								span :
-								span {{lap.milliseconds | ClockDigitFilter}}
+								span .{{lap.milliseconds | ClockDigitFilter: 'milliseconds'}}
 
 		if debug
 			script(src='http://localhost:35729/livereload.js')

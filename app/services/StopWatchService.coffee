@@ -14,20 +14,18 @@
 
 		increment:() ->
 
+			@timeout (-> self.increment()), 1 if @hasStarted is true
+			dateDiff = new Date new Date - @startDate
+
+
 			#Update counters
-			@milliseconds++
 
-			if @milliseconds is 100
-				@seconds++
-				@milliseconds = 0
+			@milliseconds = dateDiff.getUTCMilliseconds()
 
-			if @seconds is 61
-				@minutes++
-				@seconds = 0
+			@seconds = dateDiff.getUTCSeconds()
+			@minutes = dateDiff.getUTCMinutes()
+			@hours = dateDiff.getUTCHours()
 
-			if @minutes is 61
-				@minutes =0
-				@hours++
 
 			#Update Reference object
 			@callback {@milliseconds, @seconds, @minutes, @hours}
@@ -38,13 +36,14 @@
 			#Add call increment after 10 ms
 			#Pass reference object
 
-			@timeout (-> self.increment()), 10 if @hasStarted is true
+
 
 		pause: ->
 			@hasStarted = false
 
 		start: (@callback) ->
 			if @hasStarted is false
+				@startDate = new Date
 				@hasStarted = true
 				@increment()
 
