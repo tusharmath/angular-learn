@@ -1,5 +1,5 @@
 doctype 5
-html(lang="en", ng-app="myAppModule")
+html(lang="en", ng-app="myAppModule", manifest=(debug === true ? "" : "manifest.appcache"))
 	head
 		title Playing around with Angular JS
 		if debug

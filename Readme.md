@@ -15,12 +15,16 @@ This is a seed project that I have created to build static websites.
 9. Package, minify, JS and CSS.
 10. CSS, Javascript updated with each version.
 11. Tag every release.
+12. Auto generates a manifest file for developing offline html5 applications.
 
 
 #Upcoming Features
 
-1. Auto generate a manifest file of offline applications.
-2. Integrated with Travis.
+
+1. Integrate with Travis.
+
+*Request one!*
+
 
 
 #Starting Development

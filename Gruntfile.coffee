@@ -9,6 +9,20 @@
 			release: 
 				options: npm: false
 
+			manifest: generate:
+				options:
+					timerstamp: true
+					basePath : '<%= opt.output%>'
+					verbose: true
+					master: 'index.html'
+					
+				src: [
+					'*.js', '*.css'
+				]
+				dest: '<%= opt.output%>/manifest.appcache'
+
+
+
 			'gh-pages':
 				release:
 					options: base: "<%= opt.output%>"
@@ -39,7 +53,9 @@
 					'app/app.min.js'
 				]
 
-			clean: build: ['<%= opt.output%>']
+			clean: 
+				build: ['<%= opt.output%>']
+				tempJS: ['app/app.min.js']
 			less: 
 				compile:
 					options: 
@@ -50,4 +66,4 @@
 						"<%= opt.output%>/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
 				
 		grunt.initConfig grunt_config
-		grunt.registerTask 'publish', ['clean','jade', 'less', 'coffee', 'uglify', 'gh-pages']
+		grunt.registerTask 'publish', ['clean:build','jade', 'less', 'coffee', 'uglify','clean:tempJS', 'gh-pages']
