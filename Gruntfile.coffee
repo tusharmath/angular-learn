@@ -66,4 +66,4 @@
 						"<%= opt.output%>/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
 				
 		grunt.initConfig grunt_config
-		grunt.registerTask 'publish', ['clean:build','jade', 'less', 'coffee', 'uglify','clean:tempJS', 'gh-pages']
+		grunt.registerTask 'publish', ['clean:build','jade', 'less', 'coffee', 'uglify','clean:tempJS', 'manifest', 'gh-pages']
