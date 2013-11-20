@@ -3,3 +3,4 @@
 *.css
 !app/library/*.js
 !app/styles/css/*.css
+.bin

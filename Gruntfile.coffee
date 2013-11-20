@@ -4,7 +4,7 @@
 		matchdep.filter('grunt-*').forEach (task)-> grunt.loadNpmTasks(task)
 
 		grunt_config = 
-			opt: output: './bin'
+			opt: output: './.bin'
 			pkg: grunt.file.readJSON 'package.json'
 			release: 
 				options: npm: false
