@@ -1,6 +1,6 @@
 This is a seed project that I have created to build static websites.
 
-**Demo:** [tusharm.com/angular-learn](http://tusharm.com/angular-learn)
+**Demo:** [tusharm.com/angular-learn](http://tusharm.com/web-offline-seed)
 
 #Current Features
 
