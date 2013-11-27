@@ -9,13 +9,7 @@
 			@state = @WatchStates.STOPPED
 
 		#Resets counters
-		increment:() ->
-
-			self = @
-			if @state is @WatchStates.RUNNING
-				@timeout (-> self.increment()), 1
-				@callback @variance.getVariance()
-
+		
 		pause: ->
 			@state = @WatchStates.PAUSED
 
@@ -26,7 +20,21 @@
 			if @state isnt @WatchStates.RUNNING
 				@variance.reset() if @state isnt @WatchStates.PAUSED
 				@state = @WatchStates.RUNNING
-				@increment()
+				self = @
+				i = 0 
+				increment = ->
+
+					console.profileEnd 'dingdong:' if i++ is 2
+
+					if self.state is self.WatchStates.RUNNING
+
+						console.profile 'dingdong:' if i++ is 1
+						self.timeout increment, 1
+						self.callback self.variance.getVariance()
+					return
+				increment()
+				return
+
 
 		getVariance: ->
 			@callback @variance.getVariance()

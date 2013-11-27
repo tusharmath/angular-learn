@@ -1,1 +1,1 @@
-angular.module 'myAppModule', []
+angular.module 'myAppModule', ['ngTouch']
