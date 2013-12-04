@@ -51,7 +51,7 @@
 				"<%= opt.output%>/script-<%= pkg.version%>.js":[
 					'app/library/angular.js',
 					'app/library/angular-touch.js',
-					'lodash.js',
+					'app/library/lodash.js',
 					'app/app.min.js'
 				]
 
