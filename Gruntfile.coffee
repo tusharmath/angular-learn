@@ -49,7 +49,9 @@
 					}
 			uglify: compile: files:
 				"<%= opt.output%>/script-<%= pkg.version%>.js":[
-					'app/library/*.js'
+					'app/library/angular.js',
+					'app/library/angular-touch.js',
+					'lodash.js',
 					'app/app.min.js'
 				]
 
