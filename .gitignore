@@ -4,3 +4,4 @@
 !app/library/*.js
 !app/styles/css/*.css
 .bin
+bower_components

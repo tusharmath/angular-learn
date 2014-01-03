@@ -34,6 +34,7 @@ This is a seed project that I have created to build static websites.
 
 	```bash
 	npm install
+	bower install
 	```
 3. Start development server
 
