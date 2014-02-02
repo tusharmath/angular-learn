@@ -5,3 +5,4 @@
 !app/styles/css/*.css
 .bin
 bower_components
+node_modules

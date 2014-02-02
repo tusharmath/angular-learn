@@ -1,0 +1,8 @@
+{
+	"directory": "./app/bower_components",
+	"dependencies": {
+		"angular": "*",
+		"angular-touch": "*",
+		"lodash": "*"
+	}
+}

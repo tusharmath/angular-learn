@@ -1,6 +1,10 @@
 {
   "name": "SimpleApplication",
   "version": "0.0.7",
+  "scripts":{
+    "postinstall":"bower install"
+    },
+
   "dependencies": {
     "express": "*",
     "jade": "*",
@@ -18,6 +22,7 @@
     "grunt-contrib-coffee": "*",
     "grunt-release": "*",
     "grunt-contrib-clean": "*",
-    "grunt-manifest": "*"
+    "grunt-manifest": "*",
+    "bower" :"*"
   }
 }

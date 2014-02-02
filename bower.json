@@ -3,18 +3,20 @@
 	"version": "0.0.7",
 	"homepage": "https://github.com/tusharmath/web-offline-seed",
 	"authors": [
-		"Tushar Mathur <tusharmath@gmail.com>"],
+		"Tushar Mathur <tusharmath@gmail.com>"
+	],
+	"license": "MIT",
+	"private": true,
 	"dependencies": {
 		"angular": "*",
 		"angular-touch": "*",
 		"lodash": "*"
 	},
-	"license": "MIT",
-	"private": true,
 	"ignore": [
 		"**/.*",
 		"node_modules",
 		"bower_components",
 		"test",
-		"tests"]
+		"tests"
+	]
 }
