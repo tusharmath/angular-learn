@@ -16,6 +16,7 @@ This is a seed project that I have created to build static websites.
 10. CSS, Javascript updated with each version.
 11. Tag every release.
 12. Auto generates a manifest file for developing offline html5 applications.
+13. Now installs bower components automatically after the  `npm install` command.
 
 
 #Upcoming Features

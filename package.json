@@ -1,28 +1,27 @@
 {
-  "name": "SimpleApplication",
-  "version": "0.0.7",
-  "scripts":{
-    "postinstall":"bower install"
+    "name": "web-offline-seed",
+    "version": "0.0.7",
+    "scripts": {
+        "postinstall": "bower install"
     },
-
-  "dependencies": {
-    "express": "*",
-    "jade": "*",
-    "liveload": "*",
-    "less-middleware": "*",
-    "karma": "*",
-    "karma-coffee-preprocessor": "*",
-    "karma-mocha": "*",
-    "karma-chai": "*",
-    "matchdep": "*",
-    "grunt-gh-pages": "*",
-    "grunt-contrib-jade": "*",
-    "grunt-contrib-less": "*",
-    "grunt-contrib-uglify": "*",
-    "grunt-contrib-coffee": "*",
-    "grunt-release": "*",
-    "grunt-contrib-clean": "*",
-    "grunt-manifest": "*",
-    "bower" :"*"
-  }
+    "dependencies": {
+        "express": "*",
+        "jade": "*",
+        "liveload": "*",
+        "less-middleware": "*",
+        "karma": "*",
+        "karma-coffee-preprocessor": "*",
+        "karma-mocha": "*",
+        "karma-chai": "*",
+        "matchdep": "*",
+        "grunt-gh-pages": "*",
+        "grunt-contrib-jade": "*",
+        "grunt-contrib-less": "*",
+        "grunt-contrib-uglify": "*",
+        "grunt-contrib-coffee": "*",
+        "grunt-release": "*",
+        "grunt-contrib-clean": "*",
+        "grunt-manifest": "*",
+        "bower": "*"
+    }
 }
