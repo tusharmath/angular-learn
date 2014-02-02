@@ -21,6 +21,7 @@
         "grunt-contrib-coffee": "*",
         "grunt-release": "*",
         "grunt-contrib-clean": "*",
+        "connect-coffee-script": "*",
         "grunt-manifest": "*",
         "bower": "*"
     }
