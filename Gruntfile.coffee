@@ -1,7 +1,7 @@
 	matchdep = require 'matchdep'
 		
 	module.exports = (grunt) ->	
-		matchdep.filter('grunt-*').forEach (task)-> grunt.loadNpmTasks(task)
+		matchdep.filterAll('grunt-*').forEach (task)-> grunt.loadNpmTasks(task)
 
 		grunt_config = 
 			opt: output: './.bin'
@@ -9,6 +9,7 @@
 			release: 
 				options: npm: false
 
+			karma: unit: configFile: 'tests/karma.config.coffee'
 			manifest: generate:
 				options:
 					timerstamp: true
