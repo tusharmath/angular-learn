@@ -9,6 +9,8 @@
 			release: 
 				options: npm: false
 
+			bower: install: options: targetDir: 'app/vendors'
+
 			karma: unit: configFile: 'tests/karma.config.coffee'
 			manifest: generate:
 				options:
