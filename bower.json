@@ -10,7 +10,8 @@
 	"dependencies": {
 		"angular": "*",
 		"angular-touch": "*",
-		"lodash": "*"
+		"lodash": "*",
+		"bootstrap": "*"
 	},
 	"ignore": [
 		"**/.*",
