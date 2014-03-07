@@ -1,57 +1,23 @@
 doctype html
-html(lang="en", ng-app="myAppModule", manifest=(debug === true ? "" : "manifest.appcache"))
+html(lang="en")
 	head
-		title Playing around with Angular JS
+		title Workerthoughts
 		if debug
 			link(rel="stylesheet", type="text/css", href="styles/less/style.css")
+
 		else
 			link(rel="stylesheet", type="text/css", href="style-" + version + ".css")
 	body
-
+		
 		.container
+			header
+				include main-nav-content
+				include sub-nav-content
+			section
+				include main-content
 
-			.content(ng-controller="StopWatchController as x")
-				div.clock
-					span.digit {{x.minutes | ClockDigitFilter}}
-					span.digit :
-					span.digit {{x.seconds | ClockDigitFilter}}
-					span.digit.milliseconds {{x.milliseconds | ClockDigitFilter: 'milliseconds'}}
-
-				.info-block
-					div.controls
-						button.control.btn(type='button', ng-click="x.start()", ng-class="x.toggleButton_class") {{x.toggleButton}}
-						button.control.btn.btn-success(type='button', ng-click="x.lap()") Lap
-						button.control.btn.btn-danger(type='button', ng-click="x.reset()") Reset
-					div.laps
-
-						div.lap(ng-repeat='lap in x.laps')
-							span.count
-								span Lap
-								span {{$index + 1}}
-							span.time
-								span= " "
-								span {{lap.minutes | ClockDigitFilter}}
-								span :
-								span {{lap.seconds | ClockDigitFilter}}
-								span .{{lap.milliseconds | ClockDigitFilter: 'milliseconds'}}
+			footer
+				include footer-content
 
 		if debug
 			script(src='http://localhost:35729/livereload.js')
-			script(src='vendors/angular/angular.js')
-			script(src='vendors/angular-touch/angular-touch.js')
-			script(src='vendors/lodash/dist/lodash.js')
-
-			script(src='app.js')
-
-			//Filters
-			script(src="filters/ClockDigitFilter.js")
-
-			//Services
-			script(src="services/StopWatchService.js")
-			script(src="services/TimeVarianceService.js")
-
-
-			//Controllers
-			script(src="controllers/StopWatchController.js")
-		else
-			script(src='script-' + version + '.js')

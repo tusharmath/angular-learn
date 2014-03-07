@@ -1,0 +1,19 @@
+Problem Description:
+
+A team of rebellious developers have formed a software consultancy company called WorkerThoughts. In their desire to launch their corporate website and tackle the social web's undercurrents, they have approached you to help them build their front page.
+
+They got together over photoshop one night, and after much creative time wasting came up with the image mock-up you see below.
+
+
+They would like you take their creative masterpiece to the next level, by building an HTML web page, styled with the latest C`SS Voodoo.
+
+Being considerate maniacs, they have also provided images to help you with this task. 
+
+Most clients expect perfect code right from the start, but being Agile developers, they are prioritizing following outcomes from your work:
+
+a) The semantics of the markup over the pixel perfection of the layout.
+b) The maintainability of your CSS over fancy effects in css
+c) The readability of your CSS and Mark up over the performance metrics of your code in a browser
+d) Adherence to web standards over browser hacks.
+
+Thats not to say they do not value the items on the right. Armed with IE7, Firefox, and Intype(editor), they expect that this exercise will be a proof of your skills, but do not intend to give you more than an hour to prove them.
