@@ -1,10 +1,8 @@
-@import "clients.less";
-@import "nav.less";
-@import "footer.less";
-@import "information.less";
-@sub-nav-side-space: 30px;
-@sub-nav-vertical-space: 20px;
-@nav-bar-item-width: 142px;
+@import "variables";
+@import "clients";
+@import "nav";
+@import "footer";
+@import "information";
 
 .container{
 
@@ -37,7 +35,7 @@
 	.ning-icon{
 		background-image: url('../images/ning-158-c.gif');
 		background-repeat: no-repeat;
-		background-position-x: -30px;
+		background-position-x: -@inside-block-width;
 		height: 58px;
 		width: 100%;
 	}
@@ -55,8 +53,8 @@
 		background-image: url('../images/bg-introduction-full.gif');
 		background-repeat: no-repeat;
 		background-color: #e8e9de;
-		background-position: 100% 65px;
-		padding: 20px;
+		background-position: 100% 85px;
+		padding: 30px @inside-block-width;
 
 		a{
 			text-decoration: none;

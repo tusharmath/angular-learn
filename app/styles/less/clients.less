@@ -1,17 +1,14 @@
+@import "variables";
 .container .client-information{
 
-	padding: 15px 50px;
+	padding: 15px @inside-block-width;
 	ul, li{
 		display: inline-block;
 	}	
 
 	li{
 		border: 1px solid #eee;
-		margin: 0 6px;
-	}
-
-	li:first-child{
-		margin-left: 0;
+		margin-right: 32px;
 	}
 
 	li:last-child{
@@ -21,6 +18,7 @@
 	h1{
 		color: #900;
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-
+		font-weight: normal;
+		font-size: 1.2em;
 	}
 }
