@@ -1,0 +1,62 @@
+.container{
+
+	.nav-bar{
+		background-image: url('../images/bg.gif');
+		display: inline-block;
+		width: 100%;
+		height: 50px;
+	}
+
+	
+	.nav-bar-image{
+		background-image: url('../images/nav.jpg');
+		display: inline-block;
+		width: @nav-bar-item-width;
+		height: 50px;
+	}
+
+	.nav-bar-image:hover{
+		background-position-y: -50px;
+	}
+	.loop(@counter) when (@counter > 0){
+			.index-@{counter}{
+				background-position-x: (@nav-bar-item-width * (1 - @counter));	
+			}
+			.loop((@counter - 1));	
+		}
+	.loop(4);
+
+
+	.sub-nav{
+		
+		font-size: 1em;
+		clear: both;
+		border-bottom: 1px solid #ccc;
+		
+		display: inline-block;
+		width: 100%;
+		
+
+		li > a {
+			display: block;
+			text-decoration: none;
+			color: #900;
+		}
+
+		
+
+		li{
+			padding-top: @sub-nav-vertical-space;
+			padding-bottom: @sub-nav-vertical-space;
+		}
+
+		.pull-left li{
+			padding-right: @sub-nav-side-space
+		}
+
+		.pull-right li{
+			padding-left: @sub-nav-side-space
+		}
+
+	}
+}

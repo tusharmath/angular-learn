@@ -1,15 +1,20 @@
+@import "clients.less";
+@import "nav.less";
 @sub-nav-side-space: 30px;
 @sub-nav-vertical-space: 20px;
 @nav-bar-item-width: 142px;
-
-body{
-		font-size: 12px;
-}
 
 .container{
 
 	width: 780px;
 	margin: auto;
+	font-size: 12px;
+
+	li, ul {
+		display: inline-block;
+		margin: 0;
+		padding: 0;
+	}
 
 	section{
 		clear: both;
@@ -40,70 +45,6 @@ body{
 		float: right;
 	}
 
-	.nav-bar{
-		background-image: url('../images/bg.gif');
-		display: inline-block;
-		width: 100%;
-		height: 50px;
-	}
-
-	
-	.nav-bar-image{
-		background-image: url('../images/nav.jpg');
-		display: inline-block;
-		width: @nav-bar-item-width;
-		height: 50px;
-	}
-
-	.nav-bar-image:hover{
-		background-position-y: -50px;
-	}
-	.loop(@counter) when (@counter > 0){
-			.index-@{counter}{
-				background-position-x: (@nav-bar-item-width * (1 - @counter));	
-			}
-			.loop((@counter - 1));	
-		}
-	.loop(4);
-
-
-	.sub-nav{
-		
-		font-size: 1em;
-		clear: both;
-		border-bottom: 1px solid #ccc;
-		
-		display: inline-block;
-		width: 100%;
-		
-
-		li > a {
-			display: block;
-			text-decoration: none;
-			color: #900;
-		}
-
-		li, ul {
-			display: inline-block;
-			margin: 0;
-			padding: 0;
-		}
-
-		li{
-			padding-top: @sub-nav-vertical-space;
-			padding-bottom: @sub-nav-vertical-space;
-		}
-
-		.pull-left li{
-			padding-right: @sub-nav-side-space
-		}
-
-		.pull-right li{
-			padding-left: @sub-nav-side-space
-		}
-
-	}
-
 	.introduction{
 		font-size: 2.5em;
 		background-image: url('../images/bg-introduction-full.gif');
@@ -129,5 +70,7 @@ body{
 		padding:30px;
 		box-sizing: border-box;
 	}
+
+	
 
 }
