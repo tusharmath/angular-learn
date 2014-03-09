@@ -1,5 +1,6 @@
 @sub-nav-side-space: 20px;
-@nav-vertical-space: 10px;
+@sub-nav-vertical-space: 10px;
+@nav-bar-item-width: 142px;
 
 body{
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -8,8 +9,16 @@ body{
 }
 
 
+
+
 .container{
 
+	section{
+		clear: both;
+	}
+
+
+	width: 780px;
 	.pull-left {
 		float: left;
 	}
@@ -18,20 +27,41 @@ body{
 		float: right;
 	}
 
-	.nav-bar-image{
-		background-image: url('../images/nav.jpg');
-		display: block;
-		width: 597px;
+	.nav-bar{
+		background-image: url('../images/bg.gif');
+		display: inline-block;
+		width: 100%;
 		height: 50px;
 	}
+
+	
+	.nav-bar-image{
+		background-image: url('../images/nav.jpg');
+		display: inline-block;
+		width: @nav-bar-item-width;
+		height: 50px;
+	}
+
+	.nav-bar-image:hover{
+		background-position-y: -50px;
+	}
+	.loop(@counter) when (@counter > 0){
+			.index-@{counter}{
+				background-position-x: (@nav-bar-item-width * (1 - @counter));	
+			}
+			.loop((@counter - 1));	
+		}
+	.loop(4);
+
 
 	.sub-nav{
 		
 		font-size: 1em;
-
-		height: 34px;
+		clear: both;
 		border-bottom: 1px solid #ccc;
-		margin-bottom: @nav-vertical-space;
+		margin-bottom: @sub-nav-vertical-space;
+		display: inline-block;
+		width: 100%;
 		
 
 		li > a {
@@ -47,8 +77,8 @@ body{
 		}
 
 		li{
-			padding-top: @nav-vertical-space;
-			padding-bottom: @nav-vertical-space;
+			padding-top: @sub-nav-vertical-space;
+			padding-bottom: @sub-nav-vertical-space;
 		}
 
 		.pull-left li{
