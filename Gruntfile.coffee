@@ -6,30 +6,16 @@
 		grunt_config = 
 			opt: output: './.bin'
 			pkg: grunt.file.readJSON 'package.json'
-			release: 
-				options: npm: false
-
-			bower: install: options: {}
-
+		
 			karma: unit: configFile: 'tests/karma.config.coffee'
-			manifest: generate:
-				options:
-					timerstamp: true
-					basePath : '<%= opt.output%>'
-					verbose: true
-					master: 'index.html'
-					
-				src: [
-					'*.js', '*.css'
-				]
-				dest: '<%= opt.output%>/manifest.appcache'
-
-
-
-			'gh-pages':
-				release:
-					options: base: "<%= opt.output%>"
-					src: "**"
+		
+			copy: main:
+				src: 'app/styles/images/*'
+				dest: '<%= opt.output%>/styles/images/'
+				flatten: true
+				expand: true
+				
+			
 
 			jade:
 				compile:
@@ -38,18 +24,6 @@
 					files: [
 						"<%= opt.output%>/index.html" : "./views/index.jade"
 					]
-			coffee:
-				compile:
-					options: join: true
-					
-					files: {
-						'app/app.min.js': [
-							'app/app.coffee'
-							'app/services/*.coffee'
-							'app/controllers/*.coffee'
-							'app/filters/*.coffee'
-						]
-					}
 			uglify: compile: files:
 				"<%= opt.output%>/script-<%= pkg.version%>.js":[
 					'app/bower_components/angular/angular.js',
@@ -57,6 +31,7 @@
 					'app/bower_components/lodash/dist/lodash.js',
 					'app/app.min.js'
 				]
+
 
 			clean: 
 				build: ['<%= opt.output%>']
@@ -68,7 +43,7 @@
 						compress: true
 
 					files: 
-						"<%= opt.output%>/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
+						"<%= opt.output%>/styles/css/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
 				
 		grunt.initConfig grunt_config
-		grunt.registerTask 'publish', ['release', 'clean:build','jade', 'less', 'coffee', 'uglify','clean:tempJS', 'manifest', 'gh-pages']
+
