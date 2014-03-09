@@ -1,24 +1,29 @@
-@sub-nav-side-space: 20px;
-@sub-nav-vertical-space: 10px;
+@sub-nav-side-space: 30px;
+@sub-nav-vertical-space: 20px;
 @nav-bar-item-width: 142px;
 
 body{
 		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 		font-size: 12px;
-
 }
 
-
-
-
 .container{
+
+	width: 780px;
+	margin: auto;
 
 	section{
 		clear: both;
 	}
 
-
-	width: 780px;
+	.ning-icon{
+		background-image: url('../images/ning-158-c.gif');
+		background-repeat: no-repeat;
+		background-position-x: -30px;
+		height: 58px;
+		width: 100%;
+	}
+	
 	.pull-left {
 		float: left;
 	}
@@ -59,7 +64,7 @@ body{
 		font-size: 1em;
 		clear: both;
 		border-bottom: 1px solid #ccc;
-		margin-bottom: @sub-nav-vertical-space;
+		
 		display: inline-block;
 		width: 100%;
 		
