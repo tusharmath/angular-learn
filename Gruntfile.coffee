@@ -7,15 +7,17 @@
 			opt: output: './.bin'
 			pkg: grunt.file.readJSON 'package.json'
 		
-			karma: unit: configFile: 'tests/karma.config.coffee'
 		
 			copy: main:
-				src: 'app/styles/images/*'
-				dest: '<%= opt.output%>/styles/images/'
+				src: 'app/resources/images/*'
+				dest: '<%= opt.output%>/resources/images/'
 				flatten: true
 				expand: true
 				
-			
+			simplemocha: options:
+				globals: ['should', 'cheerio']
+				ui: 'tdd'
+
 
 			jade:
 				compile:
@@ -24,15 +26,7 @@
 					files: [
 						"<%= opt.output%>/index.html" : "./views/index.jade"
 					]
-			uglify: compile: files:
-				"<%= opt.output%>/script-<%= pkg.version%>.js":[
-					'app/bower_components/angular/angular.js',
-					'app/bower_components/angular-touch/angular-touch.js',
-					'app/bower_components/lodash/dist/lodash.js',
-					'app/app.min.js'
-				]
-
-
+			
 			clean: 
 				build: ['<%= opt.output%>']
 				tempJS: ['app/app.min.js']
@@ -43,7 +37,8 @@
 						compress: true
 
 					files: 
-						"<%= opt.output%>/styles/css/style-<%= pkg.version%>.css" : "app/styles/less/style.less"
+						"<%= opt.output%>/resources/css/style-<%= pkg.version%>.css" : "app/resources/less/style.less"
 				
 		grunt.initConfig grunt_config
+		grunt.registerTask 'package', [ 'clean', 'jade', 'less', 'copy']
 
