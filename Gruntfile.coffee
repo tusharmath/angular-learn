@@ -14,11 +14,6 @@
 				flatten: true
 				expand: true
 				
-			simplemocha: options:
-				globals: ['should', 'cheerio']
-				ui: 'tdd'
-
-
 			jade:
 				compile:
 					options: data: 
