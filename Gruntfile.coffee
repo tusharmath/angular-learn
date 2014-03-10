@@ -21,7 +21,14 @@
 					files: [
 						"<%= opt.output%>/index.html" : "./views/index.jade"
 					]
-			
+
+			mochaTest: test:
+				options: 
+					reporter: 'spec'
+					require: ['coffee-script/register', 'should']
+				src: ['test/*.coffee']
+
+
 			clean: 
 				build: ['<%= opt.output%>']
 				tempJS: ['app/app.min.js']
