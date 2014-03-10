@@ -43,4 +43,5 @@
 				
 		grunt.initConfig grunt_config
 		grunt.registerTask 'package', [ 'clean', 'jade', 'less', 'copy']
+		grunt.registerTask 'test', [ 'package', 'mochaTest' ]
 
