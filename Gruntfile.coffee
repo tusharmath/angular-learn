@@ -52,9 +52,9 @@
 					}
 			uglify: compile: files:
 				"<%= opt.output%>/script-<%= pkg.version%>.js":[
-					'app/bower_components/angular/angular.js',
-					'app/bower_components/angular-touch/angular-touch.js',
-					'app/bower_components/lodash/dist/lodash.js',
+					'app/vendors/angular/angular.js',
+					'app/vendors/angular-touch/angular-touch.js',
+					'app/vendors/lodash/dist/lodash.js',
 					'app/app.min.js'
 				]
 
