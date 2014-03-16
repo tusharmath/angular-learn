@@ -16,9 +16,8 @@ app.configure ->
 		files:/.(css|jade|js|less|coffee)$/
 		excludes:/^node_modules$/
 
-	app.use lessMiddleware
-		src : __dirname + '/app'
-
+	app.use lessMiddleware __dirname + '/app'
+	
 	app.use coffeeScript
 		src: __dirname + '/app'
 		bare: true
