@@ -4,6 +4,8 @@ This is a seed project that I have created to build static websites.
 
 #Current Features
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/tusharmath/web-offline-seed.svg)](https://greenkeeper.io/)
+
 1. Unit Testing using, Karma, Mocha, Chai.
 2. CoffeeScript Code.
 3. Live reload for development purposes.
